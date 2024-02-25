@@ -1,23 +1,61 @@
 # DS-3850-Project-4
 This repository holds my class projects from DS 3850, which have been re-created with ChatGPT 3.5.
 
-# MadLib
-    def mad_lib():
-    # Prompting user for inputs
-    adjective = input("Enter an adjective: ")
-    large_objects_plural = input("Enter a plural noun for large objects: ")
-    body_part = input("Enter a body part: ")
-    restaurant = input("Enter a restaurant name: ")
-    first_food = input("Enter a type of food (singular): ")
-    second_food = input("Enter another type of food (singular): ")
-    large_object_singular = input("Enter a singular noun for a large object: ")
+# Quiz
+    def run_quiz():
+    # Introduction
+        print("Welcome to the Python Quiz!\nAnswer the following questions:")
 
-    # Creating the MadLib story with user inputs
-    story = f"I’ve had a very {adjective} day. This morning, I dropped a box of {large_objects_plural} on my {body_part}. Then, at lunch, I went to {restaurant} for their delicious {first_food}, but the waiter brought me {second_food}, which I was not hungry for. Finally, on my way home, I was cut off by a van with a large {large_object_singular} strapped to the roof."
+    # Define the quiz questions and answers using a dictionary
+        questions = [
+         {
+            "question": "What is the capital of France?",
+            "choices": ["A. Paris", "B. London", "C. Berlin", "D. Rome"],
+            "answer": "A"
+        },
+        {
+            "question": "Python is a high-level programming language. (True/False)",
+            "answer": "True"
+        },
+        {
+            "question": "What is the largest mammal?",
+            "answer": "Blue whale"
+        },
+        {
+            "question": "Which of the following is not a Python data type?",
+            "choices": ["A. List", "B. Tuple", "C. Dictionary", "D. Array"],
+            "answer": "D"
+        },
+        {
+            "question": "The capital of Spain is ____________.",
+            "answer": "Madrid"
+        }
+    ]
 
-    # Displaying the completed MadLib story
-    print("\nHere's your MadLib story:\n")
-    print(story)
+    # Initialize score counter
+        score = 0
 
+    # Iterate through each question
+        for index, question in enumerate(questions, start=1):
+            print(f"\nQuestion {index}: {question['question']}")
+            if 'choices' in question:
+                for choice in question['choices']:
+                    print(choice)
+        
+        # Ask user for answer
+            user_answer = input("Your answer: ").strip().capitalize()
+
+        # Check if the answer is correct
+            if user_answer == question['answer'].capitalize():
+                print("Correct!")
+                score += 1
+            else:
+                print("Incorrect.")
+
+        # Display final score
+            print("\nQuiz complete!")
+            print(f"You got {score} out of {len(questions)} questions correct.")
+    
     if __name__ == "__main__":
-        mad_lib()
+            run_quiz()
+
