@@ -1,23 +1,28 @@
 # DS-3850-Project-4
 This repository holds my class projects from DS 3850, which have been re-created with ChatGPT 3.5.
 
-# MadLib
-    def mad_lib():
-    # Prompting user for inputs
-    adjective = input("Enter an adjective: ")
-    large_objects_plural = input("Enter a plural noun for large objects: ")
-    body_part = input("Enter a body part: ")
-    restaurant = input("Enter a restaurant name: ")
-    first_food = input("Enter a type of food (singular): ")
-    second_food = input("Enter another type of food (singular): ")
-    large_object_singular = input("Enter a singular noun for a large object: ")
+# Powerball
+    import random
+    import time
 
-    # Creating the MadLib story with user inputs
-    story = f"I’ve had a very {adjective} day. This morning, I dropped a box of {large_objects_plural} on my {body_part}. Then, at lunch, I went to {restaurant} for their delicious {first_food}, but the waiter brought me {second_food}, which I was not hungry for. Finally, on my way home, I was cut off by a van with a large {large_object_singular} strapped to the roof."
-
-    # Displaying the completed MadLib story
-    print("\nHere's your MadLib story:\n")
-    print(story)
+    def generate_powerball_numbers():
+        input("Press Enter to generate Powerball numbers...")
+    
+    # Generating the first 5 numbers (1-69)
+    numbers = sorted(random.sample(range(1, 70), 5))
+    
+    # Generating the Powerball number (1-26)
+    powerball_number = random.randint(1, 26)
+    
+    print("Generating Powerball numbers...")
+    time.sleep(1)
+    
+    # Displaying the numbers one at a time
+    print("Powerball numbers are:")
+    for num in numbers:
+        print(num, end=" ", flush=True)
+        time.sleep(1)
+    print("\nPowerball:", powerball_number)  # Powerball number on its own line
 
     if __name__ == "__main__":
-        mad_lib()
+        generate_powerball_numbers()
